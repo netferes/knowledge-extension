@@ -92,6 +92,9 @@ npm run publish:vsce
 
 Publishing needs a [VS Code Marketplace](https://marketplace.visualstudio.com/) publisher and a Personal Access Token for `vsce`.
 
+## Download
+[https://github.com/netferes/knowledge-extension/actions](https://github.com/netferes/knowledge-extension/actions)
+
 ## License
 
 [LICENSE](LICENSE)
