@@ -234,6 +234,7 @@
     "pretest": "npm run compile",
     "test": "node ./out/test/runTests.js",
     "lint": "echo \"No linter configured\"",
+    "ci": "npm run compile && npm test && npm run package",
     "package": "vsce package --out out/",
     "publish:vsce": "vsce publish"
   },
