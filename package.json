@@ -1,0 +1,250 @@
+{
+  "name": "knowledge",
+  "displayName": "Knowledge",
+  "description": "%knowledge.description%",
+  "version": "0.0.1",
+  "publisher": "netfere",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "knowledge",
+    "notes",
+    "search",
+    "treeview",
+    "git"
+  ],
+  "icon": "resources/knowledge.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/netfere/knowledge-vscode-extension.git"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "knowledge",
+          "title": "%knowledge.title%",
+          "icon": "resources/knowledge.svg"
+        }
+      ]
+    },
+    "views": {
+      "knowledge": [
+        {
+          "id": "knowledge.explorer",
+          "name": "%knowledge.explorer%"
+        },
+        {
+          "id": "knowledge.search",
+          "type": "webview",
+          "name": "%knowledge.search%"
+        },
+        {
+          "id": "knowledge.help",
+          "type": "webview",
+          "name": "%knowledge.help%"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Knowledge",
+      "properties": {
+        "knowledge.repositories": {
+          "type": "array",
+          "default": [],
+          "markdownDescription": "%knowledge.config.repositories%",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "path"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "excludePatterns": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "knowledge.excludePatterns": {
+          "type": "array",
+          "default": [
+            "node_modules",
+            ".git",
+            ".DS_Store",
+            "*.vsix",
+            "__pycache__"
+          ],
+          "markdownDescription": "%knowledge.config.excludePatterns%",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "knowledge.refreshExplorer",
+        "title": "%knowledge.command.refreshExplorer%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "knowledge.addRepository",
+        "title": "%knowledge.command.addRepository%",
+        "icon": "$(add)"
+      },
+      {
+        "command": "knowledge.removeRepository",
+        "title": "%knowledge.command.removeRepository%",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "knowledge.cloneRepository",
+        "title": "%knowledge.command.cloneRepository%",
+        "icon": "$(git-branch)"
+      },
+      {
+        "command": "knowledge.openInNewWindow",
+        "title": "%knowledge.command.openInNewWindow%",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "knowledge.newFile",
+        "title": "%knowledge.command.newFile%",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "knowledge.newFolder",
+        "title": "%knowledge.command.newFolder%",
+        "icon": "$(new-folder)"
+      },
+      {
+        "command": "knowledge.rename",
+        "title": "%knowledge.command.rename%"
+      },
+      {
+        "command": "knowledge.delete",
+        "title": "%knowledge.command.delete%"
+      },
+      {
+        "command": "knowledge.openFile",
+        "title": "%knowledge.command.openFile%"
+      },
+      {
+        "command": "knowledge.showHelp",
+        "title": "%knowledge.command.showHelp%",
+        "icon": "$(question)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "when": "view == knowledge.explorer",
+          "command": "knowledge.addRepository",
+          "group": "navigation@1"
+        },
+        {
+          "when": "view == knowledge.explorer",
+          "command": "knowledge.cloneRepository",
+          "group": "navigation@2"
+        },
+        {
+          "when": "view == knowledge.explorer",
+          "command": "knowledge.refreshExplorer",
+          "group": "navigation@3"
+        }
+      ],
+      "view/item/context": [
+        {
+          "when": "view == knowledge.explorer && viewItem == repositoryRoot",
+          "command": "knowledge.newFile",
+          "group": "inline@1"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == repositoryRoot",
+          "command": "knowledge.newFolder",
+          "group": "inline@2"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == repositoryRoot",
+          "command": "knowledge.openInNewWindow",
+          "group": "inline@3"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == repositoryRoot",
+          "command": "knowledge.removeRepository",
+          "group": "inline@4"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == folder",
+          "command": "knowledge.newFile",
+          "group": "navigation@3"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == repositoryRoot",
+          "command": "knowledge.rename",
+          "group": "navigation@1"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == folder",
+          "command": "knowledge.newFolder",
+          "group": "navigation@4"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == file",
+          "command": "knowledge.rename",
+          "group": "navigation@5"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == folder",
+          "command": "knowledge.rename",
+          "group": "navigation@5"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == file",
+          "command": "knowledge.delete",
+          "group": "navigation@6"
+        },
+        {
+          "when": "view == knowledge.explorer && viewItem == folder",
+          "command": "knowledge.delete",
+          "group": "navigation@6"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTests.js",
+    "lint": "echo \"No linter configured\"",
+    "package": "vsce package --out out/",
+    "publish:vsce": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.6.2",
+    "mocha": "^11.7.5",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {}
+}

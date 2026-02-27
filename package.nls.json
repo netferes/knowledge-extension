@@ -1,0 +1,20 @@
+{
+  "knowledge.title": "Knowledge",
+  "knowledge.description": "Manage local knowledge repositories with explorer, search, and lightweight Git integration.",
+  "knowledge.search": "Search",
+  "knowledge.explorer": "Explorer",
+  "knowledge.help": "Help",
+  "knowledge.config.repositories": "Knowledge repositories list. Each item includes { name, path }.",
+  "knowledge.config.excludePatterns": "Glob-like patterns to exclude in explorer and search.",
+  "knowledge.command.refreshExplorer": "Refresh Knowledge Explorer",
+  "knowledge.command.addRepository": "Add Knowledge Repository",
+  "knowledge.command.removeRepository": "Remove Knowledge Repository",
+  "knowledge.command.cloneRepository": "Clone Repository",
+  "knowledge.command.openInNewWindow": "Open in New Window",
+  "knowledge.command.newFile": "New File",
+  "knowledge.command.newFolder": "New Folder",
+  "knowledge.command.rename": "Rename",
+  "knowledge.command.delete": "Delete",
+  "knowledge.command.openFile": "Open File",
+  "knowledge.command.showHelp": "Show Help"
+}

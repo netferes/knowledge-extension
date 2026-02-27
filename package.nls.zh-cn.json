@@ -1,0 +1,20 @@
+{
+  "knowledge.title": "知识库",
+  "knowledge.description": "通过文件浏览、搜索和轻量 Git 集成管理本地知识库。",
+  "knowledge.search": "搜索",
+  "knowledge.explorer": "浏览器",
+  "knowledge.help": "帮助",
+  "knowledge.config.repositories": "知识库列表配置，每项包含 { name, path }。",
+  "knowledge.config.excludePatterns": "用于浏览器和搜索的排除模式列表。",
+  "knowledge.command.refreshExplorer": "刷新知识库浏览器",
+  "knowledge.command.addRepository": "添加知识库",
+  "knowledge.command.removeRepository": "移除知识库",
+  "knowledge.command.cloneRepository": "克隆仓库",
+  "knowledge.command.openInNewWindow": "在新窗口打开",
+  "knowledge.command.newFile": "新建文件",
+  "knowledge.command.newFolder": "新建文件夹",
+  "knowledge.command.rename": "重命名",
+  "knowledge.command.delete": "删除",
+  "knowledge.command.openFile": "打开文件",
+  "knowledge.command.showHelp": "显示帮助"
+}

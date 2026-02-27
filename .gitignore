@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+out/
+
+# Test runner & results
+.vscode-test/
+test-results/
+
+# Packaged extension
+*.vsix
+
+# Unzipped .vsix (if any)
+extension/
+[Content_Types].xml
+extension.vsixmanifest
+
+# IDE & debug
+.cursor/
+
+# OS
+.DS_Store

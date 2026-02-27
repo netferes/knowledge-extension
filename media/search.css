@@ -1,0 +1,64 @@
+body {
+  font-family: var(--vscode-font-family);
+  font-size: var(--vscode-font-size);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 8px;
+}
+
+.search-bar {
+  margin-bottom: 8px;
+}
+
+#query {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--vscode-input-border);
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.repo-group-title {
+  font-size: 12px;
+  color: var(--vscode-descriptionForeground);
+  margin: 6px 0 2px;
+  font-weight: 600;
+}
+
+.result-item {
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.result-item:hover {
+  background: var(--vscode-list-hoverBackground);
+}
+
+.result-path {
+  font-size: 12px;
+  color: var(--vscode-descriptionForeground);
+}
+
+.result-line {
+  margin-top: 4px;
+  font-family: var(--vscode-editor-font-family);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.empty-state {
+  color: var(--vscode-descriptionForeground);
+}

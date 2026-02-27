@@ -1,0 +1,28 @@
+# Source (ship compiled out/ only)
+src/**
+**/*.ts
+tsconfig.json
+**/*.map
+
+# Workspace & CI (not needed in extension package)
+.vscode/**
+.vscode-test/**
+.github/**
+
+# Package output (avoid bundling the .vsix itself)
+out/*.vsix
+
+# Test & debug
+test-results/**
+.cursor/**
+
+# Unzipped vsix leftovers (if any)
+extension/
+[Content_Types].xml
+extension.vsixmanifest
+
+# Development-only files
+package-lock.json
+docs/**
+.DS_Store
+
