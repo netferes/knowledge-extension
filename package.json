@@ -20,7 +20,7 @@
   "icon": "resources/knowledge.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/netfere/knowledge-vscode-extension.git"
+    "url": "https://github.com/netfere/knowledge-extension.git"
   },
   "main": "./out/extension.js",
   "contributes": {

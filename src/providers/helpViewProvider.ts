@@ -138,7 +138,7 @@ export class HelpViewProvider implements vscode.WebviewViewProvider {
 
     <h3>${text.links}</h3>
     <ul>
-      <li>GitHub: <span class="muted">https://github.com/netferes/knowledge-vscode-extension</span></li>
+      <li>GitHub: <span class="muted">https://github.com/netferes/knowledge-extension</span></li>
       <li>${text.issue}</li>
     </ul>
   </body>

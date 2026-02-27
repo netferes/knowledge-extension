@@ -98,4 +98,4 @@ Publishing needs a [VS Code Marketplace](https://marketplace.visualstudio.com/) 
 
 ## Repository
 
-[https://github.com/netferes/knowledge-vscode-extension](https://github.com/netferes/knowledge-vscode-extension)
+[https://github.com/netferes/knowledge-extension](https://github.com/netferes/knowledge-extension)
